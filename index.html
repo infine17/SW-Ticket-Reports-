@@ -69,13 +69,12 @@
             border: 2px solid #ff6600;
             box-shadow: 0 0 10px rgba(255, 102, 0, 0.3);
             text-transform: uppercase;
+            transition: all 0.3s;
         }
         
-        .locked { 
-            border-color: #333333; 
-            color: #555555; 
-            box-shadow: none; 
-            pointer-events: none; 
+        .btn:hover, .btn:active {
+            background-color: rgba(255, 102, 0, 0.1);
+            box-shadow: 0 0 15px rgba(255, 102, 0, 0.5);
         }
 
         /* --- THE ANIMATION ENGINES --- */
@@ -102,11 +101,13 @@
         <h1>Ticket Reports</h1>
         <p class="subtitle">Spider's Web Official Database</p>
         
-        <!-- Updated File Link Here -->
-        <a href="Report_July19_July26_2026.html" class="btn">Week: July 19 - July 26</a>
-        
-        <a href="#" class="btn locked">Week 2: Coming Soon</a>
-        <a href="#" class="btn locked">Week 3: Coming Soon</a>
+        <!-- All your completed weeks are linked here -->
+        <a href="Report_July19_July26_2026.html" class="btn">July 19 - July 26</a>
+        <a href="Report_July4_July10_2026.html" class="btn">July 4 - July 10</a>
+        <a href="Report_June27_July3_2026.html" class="btn">June 27 - July 3</a>
+        <a href="Report_June20_June26_2026.html" class="btn">June 20 - June 26</a>
+        <a href="Report_June14_June20_2026.html" class="btn">June 14 - June 20</a>
+        <a href="Report_June9_June15_2026.html" class="btn">June 9 - June 15</a>
     </div>
     
 </body>
