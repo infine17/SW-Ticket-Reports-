@@ -17,12 +17,10 @@
         .card { padding: 15px; }
         .highlight { color: #ff6600; font-weight: bold; font-size: 18px; }
 
-        /* IDEA 2: MVP Spotlight */
         .mvp-card { border-color: #ffcc00; text-align: center; padding: 20px; box-shadow: 0 0 20px rgba(255, 204, 0, 0.2); animation: mvpGlow 2s infinite alternate; }
         .mvp-crown { font-size: 30px; margin-bottom: 5px; text-shadow: 0 0 15px #ffcc00; }
         .mvp-title { color: #ffcc00; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
         .mvp-name { color: #fff; font-size: 24px; font-weight: bold; text-transform: uppercase; text-shadow: 0 0 10px rgba(255,255,255,0.5); margin-bottom: 5px; }
-        .mvp-score { color: #cccccc; font-size: 14px; }
         
         table { width: 100%; border-collapse: collapse; overflow: hidden; }
         th, td { padding: 12px; text-align: left; border-bottom: 1px solid #222; font-size: 14px; }
@@ -30,10 +28,17 @@
         .bar-bg { width: 100%; background: #111; border-radius: 3px; height: 10px; border: 1px solid #333; }
         .bar-fill { background: #ff6600; height: 10px; border-radius: 3px; box-shadow: 0 0 8px #ff6600; }
 
+        /* IDEA 2: Hacker Ranks */
+        .rank { display: block; font-size: 10px; margin-top: 3px; letter-spacing: 1px; }
+        .r-ninja { color: #ff6600; text-shadow: 0 0 5px #ff6600; }
+        .r-splicer { color: #00ffcc; text-shadow: 0 0 5px #00ffcc; }
+        .r-anomaly { color: #ff3333; text-shadow: 0 0 5px #ff3333; animation: anomalyGlitch 0.5s infinite; }
+
         @keyframes scrollGrid { 0% { background-position: 0px 0px; } 100% { background-position: 30px 30px; } }
         @keyframes scanLaser { 0% { top: -10%; } 100% { top: 110%; } }
         @keyframes pulseGlow { 0% { box-shadow: 0 0 10px rgba(255, 102, 0, 0.1); } 100% { box-shadow: 0 0 20px rgba(255, 102, 0, 0.3); } }
         @keyframes mvpGlow { 0% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.1); border-color: #aa8800; } 100% { box-shadow: 0 0 25px rgba(255, 204, 0, 0.4); border-color: #ffcc00; } }
+        @keyframes anomalyGlitch { 0% { transform: translateX(1px); } 50% { transform: translateX(-1px); } 100% { transform: translateX(0); } }
     </style>
 </head>
 <body>
@@ -45,12 +50,10 @@
         <h2>Week: July 19 - 26</h2>
     </div>
 
-    <!-- MVP Spotlight Card -->
     <div class="mvp-card">
         <div class="mvp-crown">👑</div>
         <div class="mvp-title">MVP of the Week</div>
         <div class="mvp-name">Vansh</div>
-        <div class="mvp-score">59 Tickets Solved</div>
     </div>
 
     <div class="card">
@@ -60,12 +63,37 @@
     
     <table>
         <tr><th>Moderator</th><th>Tickets</th><th>Volume</th></tr>
-        <tr><td><strong>Vansh</strong></td><td>59</td><td><div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div></td></tr>
-        <tr><td><strong>Kaido</strong></td><td>53</td><td><div class="bar-bg"><div class="bar-fill" style="width: 89%;"></div></div></td></tr>
-        <tr><td><strong>Kaori</strong></td><td>42</td><td><div class="bar-bg"><div class="bar-fill" style="width: 71%;"></div></div></td></tr>
-        <tr><td><strong>Arxeus</strong></td><td>13</td><td><div class="bar-bg"><div class="bar-fill" style="width: 22%;"></div></div></td></tr>
-        <tr><td><strong>Infine</strong></td><td>10</td><td><div class="bar-bg"><div class="bar-fill" style="width: 17%;"></div></div></td></tr>
-        <tr><td><strong>Billu badmosh</strong></td><td><span style="color:#ff3333; font-weight:bold;">1</span></td><td><div class="bar-bg"><div class="bar-fill" style="width: 2%; background:#ff3333; box-shadow: 0 0 8px #ff3333;"></div></div></td></tr>
+        
+        <tr>
+            <td><strong>Vansh</strong><span class="rank r-ninja">[CYBER NINJA]</span></td>
+            <td>59</td>
+            <td><div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div></td>
+        </tr>
+        <tr>
+            <td><strong>Kaido</strong><span class="rank r-ninja">[CYBER NINJA]</span></td>
+            <td>53</td>
+            <td><div class="bar-bg"><div class="bar-fill" style="width: 89%;"></div></div></td>
+        </tr>
+        <tr>
+            <td><strong>Kaori</strong><span class="rank r-splicer">[DATA SPLICER]</span></td>
+            <td>42</td>
+            <td><div class="bar-bg"><div class="bar-fill" style="width: 71%;"></div></div></td>
+        </tr>
+        <tr>
+            <td><strong>Arxeus</strong><span class="rank r-splicer">[DATA SPLICER]</span></td>
+            <td>13</td>
+            <td><div class="bar-bg"><div class="bar-fill" style="width: 22%;"></div></div></td>
+        </tr>
+        <tr>
+            <td><strong>Infine</strong><span class="rank r-splicer">[DATA SPLICER]</span></td>
+            <td>10</td>
+            <td><div class="bar-bg"><div class="bar-fill" style="width: 17%;"></div></div></td>
+        </tr>
+        <tr>
+            <td><strong>Billu badmosh</strong><span class="rank r-anomaly">[AFK ANOMALY]</span></td>
+            <td><span style="color:#ff3333; font-weight:bold;">1</span></td>
+            <td><div class="bar-bg"><div class="bar-fill" style="width: 2%; background:#ff3333; box-shadow: 0 0 8px #ff3333;"></div></div></td>
+        </tr>
     </table>
 
 </body>
