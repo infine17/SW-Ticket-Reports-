@@ -1,42 +1,140 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Week 1 Report</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report: July 19 - July 26, 2026</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f8f9fb; padding: 15px; margin: 0; }
-        .header { background-color: #5865F2; color: white; padding: 15px; border-radius: 8px; margin-bottom: 15px; }
-        .back-btn { color: white; text-decoration: none; font-size: 14px; display: inline-block; margin-bottom: 10px; background: rgba(0,0,0,0.2); padding: 5px 10px; border-radius: 4px; }
-        .card { background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-        table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #eee; font-size: 14px; }
-        th { background-color: #f2f3f5; color: #72767d; font-size: 12px; }
-        .bar-bg { width: 100%; background: #eee; border-radius: 3px; height: 8px; }
-        .bar-fill { background: #5865F2; height: 8px; border-radius: 3px; }
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;600&display=swap');
+
+        :root {
+            --bg-dark: #0f1015;
+            --accent-purple: #b829ea;
+            --accent-blue: #2974ea;
+            --panel-bg: rgba(20, 22, 30, 0.85);
+            --text-light: #e0e2e8;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            background-color: var(--bg-dark);
+            background-image: linear-gradient(135deg, rgba(184, 41, 234, 0.05), rgba(41, 116, 234, 0.05));
+            font-family: 'Rajdhani', sans-serif;
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-nav {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .btn-back {
+            padding: 10px 24px;
+            background: transparent;
+            color: var(--accent-purple);
+            border: 2px solid var(--accent-purple);
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            box-shadow: 0 0 10px rgba(184, 41, 234, 0.2);
+        }
+
+        .btn-back:hover {
+            background: var(--accent-purple);
+            color: #fff;
+            box-shadow: 0 0 20px rgba(184, 41, 234, 0.5);
+        }
+
+        .content-panel {
+            width: 100%;
+            max-width: 900px;
+            background: var(--panel-bg);
+            border-top: 4px solid var(--accent-blue);
+            border-radius: 12px;
+            padding: 40px;
+            box-sizing: border-box;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            margin-top: 0;
+            color: #fff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 20px;
+        }
+
+        .data-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .data-item {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-purple);
+            font-size: 1.2rem;
+            transition: transform 0.2s;
+        }
+
+        .data-item:hover {
+            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .data-label {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent-blue);
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <a href="index.html" class="back-btn">🔙 Back to Dashboard</a>
-        <h2 style="margin: 0;">Week Ending: July 26</h2>
+    <div class="header-nav">
+        <!-- Relative link taking you back to the main hub -->
+        <a href="index.html" class="btn-back">← RETURN TO HUB</a>
+        <div style="font-family: 'Orbitron', sans-serif; color: rgba(255,255,255,0.4);">SECURE CONNECTION</div>
     </div>
 
-    <div class="card">
-        <strong>Total Tickets Solved:</strong> 178 <br>
-        <strong>Active Mods:</strong> 6
+    <div class="content-panel">
+        <h1>REPORT: JULY 19 - JULY 26, 2026</h1>
+        
+        <ul class="data-list">
+            <li class="data-item">
+                <span class="data-label">TICKETS RESOLVED</span>
+                Successfully closed 42 pending reports from the main queue during this timeframe.
+            </li>
+            <li class="data-item">
+                <span class="data-label">SYSTEM STATUS</span>
+                All servers operating at 99.9% uptime throughout the week.
+            </li>
+            <li class="data-item">
+                <span class="data-label">NOTES</span>
+                Data collection finalized for the week of July 19th. No critical errors detected.
+            </li>
+        </ul>
     </div>
-    
-    <table>
-        <tr><th>Moderator</th><th>Tickets</th><th>Volume</th></tr>
-        <tr><td><strong>Vansh</strong></td><td>59</td><td><div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div></td></tr>
-        <tr><td><strong>Kaido</strong></td><td>53</td><td><div class="bar-bg"><div class="bar-fill" style="width: 89%;"></div></div></td></tr>
-        <tr><td><strong>Kaori</strong></td><td>42</td><td><div class="bar-bg"><div class="bar-fill" style="width: 71%;"></div></div></td></tr>
-        <tr><td><strong>Arxeus</strong></td><td>13</td><td><div class="bar-bg"><div class="bar-fill" style="width: 22%;"></div></div></td></tr>
-        <tr><td><strong>Infine</strong></td><td>10</td><td><div class="bar-bg"><div class="bar-fill" style="width: 17%;"></div></div></td></tr>
-        <tr><td><strong>Billu badmosh</strong></td><td><span style="color:red; font-weight:bold;">1</span></td><td><div class="bar-bg"><div class="bar-fill" style="width: 2%; background:red;"></div></div></td></tr>
-    </table>
 
 </body>
 </html>
