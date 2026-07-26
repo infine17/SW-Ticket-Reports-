@@ -3,123 +3,80 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Week 1 Report</title>
+    <title>July 19 - 26 Report</title>
     <style>
-        body { 
-            font-family: 'Courier New', Courier, monospace; 
-            background-color: #050505; 
-            /* The Grid */
-            background-image: 
-                linear-gradient(rgba(255, 102, 0, 0.15) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 102, 0, 0.15) 1px, transparent 1px);
-            background-size: 30px 30px;
-            /* Grid Animation */
-            animation: scrollGrid 3s linear infinite; 
-            padding: 15px; 
-            margin: 0; 
-            color: #ffffff;
-            overflow-x: hidden;
-        }
+        body { font-family: 'Courier New', Courier, monospace; background-color: #050505; background-image: linear-gradient(rgba(255, 102, 0, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 102, 0, 0.15) 1px, transparent 1px); background-size: 30px 30px; animation: scrollGrid 3s linear infinite; padding: 15px; margin: 0; color: #ffffff; overflow-x: hidden; }
+        .laser { position: fixed; top: -10%; left: 0; width: 100%; height: 2px; background: #ff6600; box-shadow: 0 0 15px #ff6600, 0 0 30px #ff6600; opacity: 0.6; animation: scanLaser 4s linear infinite; pointer-events: none; z-index: 1000; }
         
-        /* The sweeping scanner laser */
-        .laser {
-            position: fixed;
-            top: -10%; left: 0; width: 100%; height: 2px;
-            background: #ff6600;
-            box-shadow: 0 0 15px #ff6600, 0 0 30px #ff6600;
-            opacity: 0.6;
-            animation: scanLaser 4s linear infinite;
-            pointer-events: none;
-            z-index: 1000;
-        }
-
-        .header, .card, table { 
-            position: relative;
-            z-index: 10;
-            background-color: rgba(10, 10, 10, 0.85); 
-            border-radius: 8px; 
-            border: 1px solid #ff6600;
-            backdrop-filter: blur(5px);
-        }
-
-        .header { 
-            padding: 20px; 
-            margin-bottom: 20px; 
-            /* Breathing Glow Animation */
-            animation: pulseGlow 2.5s ease-in-out infinite alternate;
-        }
-
-        .back-btn { 
-            color: #ff6600; 
-            text-decoration: none; 
-            font-size: 14px; 
-            display: inline-block; 
-            margin-bottom: 15px; 
-            border: 1px solid #ff6600;
-            padding: 5px 10px; 
-            border-radius: 4px; 
-            text-transform: uppercase;
-            box-shadow: 0 0 5px rgba(255, 102, 0, 0.2);
-            transition: all 0.3s;
-        }
+        .header, .card, table, .mvp-card, .category-card { position: relative; z-index: 10; background-color: rgba(10, 10, 10, 0.85); border-radius: 8px; border: 1px solid #ff6600; backdrop-filter: blur(5px); margin-bottom: 20px; }
         
+        .header { padding: 20px; animation: pulseGlow 2.5s ease-in-out infinite alternate; }
+        .back-btn { color: #ff6600; text-decoration: none; font-size: 14px; display: inline-block; margin-bottom: 15px; border: 1px solid #ff6600; padding: 5px 10px; border-radius: 4px; text-transform: uppercase; transition: all 0.3s; }
         h2 { margin: 0; color: #ff6600; text-shadow: 0 0 10px rgba(255, 102, 0, 0.6); text-transform: uppercase; letter-spacing: 1px; }
         
-        .card { 
-            padding: 15px; 
-            margin-bottom: 20px; 
-            animation: pulseGlow 2s ease-in-out infinite alternate-reverse;
-        }
+        .card { padding: 15px; }
+        .highlight { color: #ff6600; font-weight: bold; font-size: 18px; }
+
+        /* IDEA 2: MVP Spotlight */
+        .mvp-card { border-color: #ffcc00; text-align: center; padding: 20px; box-shadow: 0 0 20px rgba(255, 204, 0, 0.2); animation: mvpGlow 2s infinite alternate; }
+        .mvp-crown { font-size: 30px; margin-bottom: 5px; text-shadow: 0 0 15px #ffcc00; }
+        .mvp-title { color: #ffcc00; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+        .mvp-name { color: #fff; font-size: 24px; font-weight: bold; text-transform: uppercase; text-shadow: 0 0 10px rgba(255,255,255,0.5); margin-bottom: 5px; }
+        .mvp-score { color: #cccccc; font-size: 14px; }
+
+        /* IDEA 3: Category Breakdown */
+        .category-card { padding: 15px; }
+        .cat-title { font-size: 12px; color: #ff6600; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 1px; }
+        .dual-bar-container { display: flex; width: 100%; height: 12px; border-radius: 4px; overflow: hidden; border: 1px solid #333; margin-bottom: 10px; }
+        .gen-fill { background: #ff6600; height: 100%; box-shadow: 0 0 8px #ff6600; }
+        .rob-fill { background: #ffcc00; height: 100%; box-shadow: 0 0 8px #ffcc00; }
+        .cat-legend { display: flex; justify-content: space-between; font-size: 11px; font-weight: bold; }
         
-        .highlight { color: #ff6600; font-weight: bold; font-size: 18px; text-shadow: 0 0 5px rgba(255, 102, 0, 0.5); }
-        
-        table { 
-            width: 100%; 
-            border-collapse: collapse; 
-            overflow: hidden; 
-            animation: pulseGlow 3s ease-in-out infinite alternate;
-        }
-        
+        table { width: 100%; border-collapse: collapse; overflow: hidden; }
         th, td { padding: 12px; text-align: left; border-bottom: 1px solid #222; font-size: 14px; }
         th { background-color: rgba(255, 102, 0, 0.1); color: #ff6600; font-size: 12px; text-transform: uppercase; border-bottom: 1px solid #ff6600; }
-        
         .bar-bg { width: 100%; background: #111; border-radius: 3px; height: 10px; border: 1px solid #333; }
-        
-        .bar-fill { 
-            background: #ff6600; 
-            height: 10px; 
-            border-radius: 3px; 
-            box-shadow: 0 0 8px #ff6600;
-        }
+        .bar-fill { background: #ff6600; height: 10px; border-radius: 3px; box-shadow: 0 0 8px #ff6600; }
 
-        /* --- THE ANIMATION ENGINES --- */
-        @keyframes scrollGrid {
-            0% { background-position: 0px 0px; }
-            100% { background-position: 30px 30px; }
-        }
-        @keyframes scanLaser {
-            0% { top: -10%; }
-            100% { top: 110%; }
-        }
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 10px rgba(255, 102, 0, 0.1), inset 0 0 5px rgba(255, 102, 0, 0.05); }
-            100% { box-shadow: 0 0 20px rgba(255, 102, 0, 0.3), inset 0 0 10px rgba(255, 102, 0, 0.1); }
-        }
+        @keyframes scrollGrid { 0% { background-position: 0px 0px; } 100% { background-position: 30px 30px; } }
+        @keyframes scanLaser { 0% { top: -10%; } 100% { top: 110%; } }
+        @keyframes pulseGlow { 0% { box-shadow: 0 0 10px rgba(255, 102, 0, 0.1); } 100% { box-shadow: 0 0 20px rgba(255, 102, 0, 0.3); } }
+        @keyframes mvpGlow { 0% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.1); border-color: #aa8800; } 100% { box-shadow: 0 0 25px rgba(255, 204, 0, 0.4); border-color: #ffcc00; } }
     </style>
 </head>
 <body>
 
-    <!-- The sweeping laser line -->
     <div class="laser"></div>
 
     <div class="header">
         <a href="index.html" class="back-btn">← System Return</a>
-        <h2>Week Ending: July 26</h2>
+        <h2>Week: July 19 - 26</h2>
+    </div>
+
+    <!-- MVP Spotlight Card -->
+    <div class="mvp-card">
+        <div class="mvp-crown">👑</div>
+        <div class="mvp-title">MVP of the Week</div>
+        <div class="mvp-name">Vansh</div>
+        <div class="mvp-score">59 Tickets Solved</div>
     </div>
 
     <div class="card">
         <strong>Total Tickets Solved:</strong> <span class="highlight">178</span> <br><br>
         <strong>Active Mods:</strong> <span class="highlight">6</span>
+    </div>
+
+    <!-- Category Breakdown Card -->
+    <div class="category-card">
+        <div class="cat-title">Ticket Categories</div>
+        <div class="dual-bar-container">
+            <div class="gen-fill" style="width: 75%;"></div> <!-- General % -->
+            <div class="rob-fill" style="width: 25%;"></div> <!-- Roblox % -->
+        </div>
+        <div class="cat-legend">
+            <span style="color: #ff6600;">General: 134</span>
+            <span style="color: #ffcc00;">Roblox: 44</span>
+        </div>
     </div>
     
     <table>
@@ -129,7 +86,7 @@
         <tr><td><strong>Kaori</strong></td><td>42</td><td><div class="bar-bg"><div class="bar-fill" style="width: 71%;"></div></div></td></tr>
         <tr><td><strong>Arxeus</strong></td><td>13</td><td><div class="bar-bg"><div class="bar-fill" style="width: 22%;"></div></div></td></tr>
         <tr><td><strong>Infine</strong></td><td>10</td><td><div class="bar-bg"><div class="bar-fill" style="width: 17%;"></div></div></td></tr>
-        <tr><td><strong>Billu badmosh</strong></td><td><span style="color:#ff3333; font-weight:bold; text-shadow: 0 0 5px rgba(255,51,51,0.5);">1</span></td><td><div class="bar-bg"><div class="bar-fill" style="width: 2%; background:#ff3333; box-shadow: 0 0 8px #ff3333;"></div></div></td></tr>
+        <tr><td><strong>Billu badmosh</strong></td><td><span style="color:#ff3333; font-weight:bold;">1</span></td><td><div class="bar-bg"><div class="bar-fill" style="width: 2%; background:#ff3333; box-shadow: 0 0 8px #ff3333;"></div></div></td></tr>
     </table>
 
 </body>
