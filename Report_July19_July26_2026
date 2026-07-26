@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Week 1 Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f8f9fb; padding: 15px; margin: 0; }
+        .header { background-color: #5865F2; color: white; padding: 15px; border-radius: 8px; margin-bottom: 15px; }
+        .back-btn { color: white; text-decoration: none; font-size: 14px; display: inline-block; margin-bottom: 10px; background: rgba(0,0,0,0.2); padding: 5px 10px; border-radius: 4px; }
+        .card { background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #eee; font-size: 14px; }
+        th { background-color: #f2f3f5; color: #72767d; font-size: 12px; }
+        .bar-bg { width: 100%; background: #eee; border-radius: 3px; height: 8px; }
+        .bar-fill { background: #5865F2; height: 8px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <a href="index.html" class="back-btn">🔙 Back to Dashboard</a>
+        <h2 style="margin: 0;">Week Ending: July 26</h2>
+    </div>
+
+    <div class="card">
+        <strong>Total Tickets Solved:</strong> 178 <br>
+        <strong>Active Mods:</strong> 6
+    </div>
+    
+    <table>
+        <tr><th>Moderator</th><th>Tickets</th><th>Volume</th></tr>
+        <tr><td><strong>Vansh</strong></td><td>59</td><td><div class="bar-bg"><div class="bar-fill" style="width: 100%;"></div></div></td></tr>
+        <tr><td><strong>Kaido</strong></td><td>53</td><td><div class="bar-bg"><div class="bar-fill" style="width: 89%;"></div></div></td></tr>
+        <tr><td><strong>Kaori</strong></td><td>42</td><td><div class="bar-bg"><div class="bar-fill" style="width: 71%;"></div></div></td></tr>
+        <tr><td><strong>Arxeus</strong></td><td>13</td><td><div class="bar-bg"><div class="bar-fill" style="width: 22%;"></div></div></td></tr>
+        <tr><td><strong>Infine</strong></td><td>10</td><td><div class="bar-bg"><div class="bar-fill" style="width: 17%;"></div></div></td></tr>
+        <tr><td><strong>Billu badmosh</strong></td><td><span style="color:red; font-weight:bold;">1</span></td><td><div class="bar-bg"><div class="bar-fill" style="width: 2%; background:red;"></div></div></td></tr>
+    </table>
+
+</body>
+</html>
