@@ -8,7 +8,7 @@
         body { font-family: 'Courier New', Courier, monospace; background-color: #050505; background-image: linear-gradient(rgba(255, 102, 0, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 102, 0, 0.15) 1px, transparent 1px); background-size: 30px 30px; animation: scrollGrid 3s linear infinite; padding: 15px; margin: 0; color: #ffffff; overflow-x: hidden; }
         .laser { position: fixed; top: -10%; left: 0; width: 100%; height: 2px; background: #ff6600; box-shadow: 0 0 15px #ff6600, 0 0 30px #ff6600; opacity: 0.6; animation: scanLaser 4s linear infinite; pointer-events: none; z-index: 1000; }
         
-        .header, .card, table, .mvp-card, .category-card { position: relative; z-index: 10; background-color: rgba(10, 10, 10, 0.85); border-radius: 8px; border: 1px solid #ff6600; backdrop-filter: blur(5px); margin-bottom: 20px; }
+        .header, .card, table, .mvp-card { position: relative; z-index: 10; background-color: rgba(10, 10, 10, 0.85); border-radius: 8px; border: 1px solid #ff6600; backdrop-filter: blur(5px); margin-bottom: 20px; }
         
         .header { padding: 20px; animation: pulseGlow 2.5s ease-in-out infinite alternate; }
         .back-btn { color: #ff6600; text-decoration: none; font-size: 14px; display: inline-block; margin-bottom: 15px; border: 1px solid #ff6600; padding: 5px 10px; border-radius: 4px; text-transform: uppercase; transition: all 0.3s; }
@@ -23,14 +23,6 @@
         .mvp-title { color: #ffcc00; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
         .mvp-name { color: #fff; font-size: 24px; font-weight: bold; text-transform: uppercase; text-shadow: 0 0 10px rgba(255,255,255,0.5); margin-bottom: 5px; }
         .mvp-score { color: #cccccc; font-size: 14px; }
-
-        /* IDEA 3: Category Breakdown */
-        .category-card { padding: 15px; }
-        .cat-title { font-size: 12px; color: #ff6600; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 1px; }
-        .dual-bar-container { display: flex; width: 100%; height: 12px; border-radius: 4px; overflow: hidden; border: 1px solid #333; margin-bottom: 10px; }
-        .gen-fill { background: #ff6600; height: 100%; box-shadow: 0 0 8px #ff6600; }
-        .rob-fill { background: #ffcc00; height: 100%; box-shadow: 0 0 8px #ffcc00; }
-        .cat-legend { display: flex; justify-content: space-between; font-size: 11px; font-weight: bold; }
         
         table { width: 100%; border-collapse: collapse; overflow: hidden; }
         th, td { padding: 12px; text-align: left; border-bottom: 1px solid #222; font-size: 14px; }
@@ -64,19 +56,6 @@
     <div class="card">
         <strong>Total Tickets Solved:</strong> <span class="highlight">178</span> <br><br>
         <strong>Active Mods:</strong> <span class="highlight">6</span>
-    </div>
-
-    <!-- Category Breakdown Card -->
-    <div class="category-card">
-        <div class="cat-title">Ticket Categories</div>
-        <div class="dual-bar-container">
-            <div class="gen-fill" style="width: 75%;"></div> <!-- General % -->
-            <div class="rob-fill" style="width: 25%;"></div> <!-- Roblox % -->
-        </div>
-        <div class="cat-legend">
-            <span style="color: #ff6600;">General: 134</span>
-            <span style="color: #ffcc00;">Roblox: 44</span>
-        </div>
     </div>
     
     <table>
